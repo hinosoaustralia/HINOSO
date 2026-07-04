@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { MOVEMENT_SCENES } from "@/lib/content";
 import { SplitWords } from "@/components/ui/AnimatedText";
-import { Reveal } from "@/components/ui/Reveal";
 
 /**
  * SECTION 5 — Designed Around Movement.
@@ -18,20 +17,14 @@ export default function Movement() {
           <span className="eyebrow">Designed around movement</span>
           <SplitWords
             as="h2"
-            text="Recovery that keeps up with your day."
+            text="Wherever you go."
             className="mt-3 text-4xl font-semibold leading-[1.05] tracking-tightest text-charcoal sm:text-5xl md:text-6xl"
           />
-          <Reveal delay={0.1}>
-            <p className="mt-5 max-w-md text-base text-charcoal-muted sm:text-lg text-pretty">
-              Quiet, cable-free and completely unobtrusive — HINOSO goes wherever
-              you do.
-            </p>
-          </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {MOVEMENT_SCENES.map((scene, i) => (
-            <SceneCard key={scene.title} index={i} title={scene.title} note={scene.note} />
+            <SceneCard key={scene.title} index={i} title={scene.title} />
           ))}
         </div>
       </div>
@@ -42,11 +35,9 @@ export default function Movement() {
 function SceneCard({
   index,
   title,
-  note,
 }: {
   index: number;
   title: string;
-  note: string;
 }) {
   const gradients = [
     "from-stone-light via-bone to-bone",
@@ -80,9 +71,6 @@ function SceneCard({
         <h3 className={`text-3xl font-semibold tracking-tightest ${dark ? "text-bone" : "text-charcoal"}`}>
           {title}
         </h3>
-        <p className={`mt-2 text-sm ${dark ? "text-bone/70" : "text-charcoal-muted"}`}>
-          {note}
-        </p>
       </div>
     </motion.article>
   );

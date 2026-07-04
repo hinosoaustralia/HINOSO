@@ -43,30 +43,6 @@ export const MOVEMENT_SCENES = [
   { title: "Rest", note: "Wind down. Warm up. Repeat." },
 ] as const;
 
-/** Comparison. */
-export const COMPARISON = {
-  traditional: {
-    label: "Traditional TENS",
-    points: [
-      { text: "Wires & leads", ok: false },
-      { text: "Single-use sticky pads", ok: false },
-      { text: "Difficult setup", ok: false },
-      { text: "No heat", ok: false },
-      { text: "Disposable batteries", ok: false },
-    ],
-  },
-  hinoso: {
-    label: "HINOSO",
-    points: [
-      { text: "Fully wireless", ok: true },
-      { text: "Wireless heat", ok: true },
-      { text: "Reusable gel pads", ok: true },
-      { text: "Three therapies in one", ok: true },
-      { text: "Rechargeable", ok: true },
-    ],
-  },
-} as const;
-
 /* ------------------------------------------------------------------ *
  *  👇  PASTE YOUR INSTAGRAM LINK HERE
  * ------------------------------------------------------------------ */

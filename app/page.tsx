@@ -1,9 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
 import Introducing from "@/components/sections/Introducing";
-import Marquee from "@/components/sections/Marquee";
 import Movement from "@/components/sections/Movement";
-import Comparison from "@/components/sections/Comparison";
 import Waitlist from "@/components/sections/Waitlist";
 
 // Rich result / SEO structured data.
@@ -39,9 +37,7 @@ export default function Home() {
       <Hero />
       <Problem />
       <Introducing />
-      <Marquee />
       <Movement />
-      <Comparison />
       <Waitlist />
     </>
   );

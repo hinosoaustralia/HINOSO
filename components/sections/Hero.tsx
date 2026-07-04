@@ -3,8 +3,18 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PodRender from "@/components/ui/PodRender";
+import MarqueeRow from "@/components/ui/MarqueeRow";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { SplitWords } from "@/components/ui/AnimatedText";
+
+// Faint scrolling word-wall behind the hero product.
+const BG_ROWS = [
+  ["Recovery", "Wireless heat", "EMS"],
+  ["TENS", "No wires", "Reimagined"],
+  ["Made simple", "Wearable", "Recovery"],
+  ["No gel mess", "Wireless heat", "TENS"],
+  ["Reimagined", "EMS", "Made simple"],
+];
 
 /**
  * SECTION 1 — Hero.
@@ -33,6 +43,23 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-obsidian px-6 py-24"
     >
+      {/* Faint scrolling word-wall in the background, behind the product. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 flex flex-col justify-center gap-1 opacity-[0.07] sm:gap-2"
+      >
+        {BG_ROWS.map((items, i) => (
+          <MarqueeRow
+            key={i}
+            items={items}
+            direction={i % 2 ? "right" : "left"}
+            duration={34 + i * 5}
+            dotClassName="bg-bone/40"
+            className="text-6xl font-semibold tracking-tightest text-bone sm:text-7xl md:text-8xl"
+          />
+        ))}
+      </div>
+
       {/* slow-breathing sage aura */}
       <motion.div
         aria-hidden
@@ -70,7 +97,7 @@ export default function Hero() {
       />
 
       {/* The product — large, blurred, dimmed. A glimpse, never a reveal. */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[min(920px,110vw)] -translate-x-1/2 -translate-y-1/2">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-[1] w-[min(920px,110vw)] -translate-x-1/2 -translate-y-1/2">
         <motion.div style={{ scale: podScale, y: podY }}>
           <PodRender
             imgFilter="brightness(0.6) contrast(1.08) saturate(0.88) blur(11px)"
