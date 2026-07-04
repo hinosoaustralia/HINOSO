@@ -39,7 +39,15 @@ export default function LoadingScreen() {
     };
     raf = requestAnimationFrame(tick);
 
-    return () => cancelAnimationFrame(raf);
+    // Guaranteed dismissal: requestAnimationFrame pauses when the tab isn't
+    // focused, which could otherwise leave the curtain stuck. This timer always
+    // fires and reveals the site no matter what.
+    const failsafe = setTimeout(() => setVisible(false), total + 600);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(failsafe);
+    };
   }, [reduce]);
 
   // Release scroll lock once the curtain is gone.

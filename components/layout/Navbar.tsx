@@ -100,12 +100,24 @@ export default function Navbar() {
             </MagneticButton>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMenuOpen((o) => !o)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-          >
+          {/* Mobile: compact Join button + hamburger */}
+          <div className="flex items-center gap-2.5 md:hidden">
+            <button
+              onClick={() => scrollTo("#waitlist")}
+              className={cn(
+                "rounded-full px-4 py-2 text-xs font-semibold transition-colors duration-500",
+                darkText ? "bg-charcoal text-bone" : "bg-bone text-charcoal"
+              )}
+            >
+              Join
+            </button>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMenuOpen((o) => !o)}
+              className="relative z-50 flex h-10 w-8 items-center justify-center"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
             <span className="relative flex h-4 w-6 flex-col justify-between">
               <span
                 className={cn(
@@ -129,7 +141,8 @@ export default function Navbar() {
                 )}
               />
             </span>
-          </button>
+            </button>
+          </div>
         </nav>
       </motion.header>
 

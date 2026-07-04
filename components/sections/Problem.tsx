@@ -12,7 +12,7 @@ import { Reveal } from "@/components/ui/Reveal";
  */
 export default function Problem() {
   return (
-    <section className="section relative overflow-hidden bg-bone pb-20 pt-36 md:pb-40 md:pt-60">
+    <section className="section relative overflow-hidden bg-bone pb-20 pt-44 md:pb-40 md:pt-60">
       {/* dark → paper transition from the hero */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-obsidian to-bone"
@@ -21,14 +21,14 @@ export default function Problem() {
 
       <div className="container-hinoso relative px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-lg font-bold uppercase tracking-[0.24em] text-sage-600 sm:text-xl">
-            The old way
-          </span>
           <SplitWords
             as="h2"
             text="People don't ignore recovery."
-            className="mt-6 justify-center text-3xl font-medium leading-[1.1] tracking-tight text-charcoal sm:text-5xl md:text-6xl"
+            className="justify-center text-3xl font-medium leading-[1.1] tracking-tight text-charcoal sm:text-5xl md:text-6xl"
           />
+          <span className="mt-10 block text-lg font-bold uppercase tracking-[0.24em] text-sage-600 sm:text-xl">
+            The old way
+          </span>
           <Reveal delay={0.15}>
             <p className="mt-4 text-3xl font-medium leading-[1.1] tracking-tight text-charcoal-muted sm:text-5xl md:text-6xl">
               They ignore recovery <span className="text-sage">products.</span>
