@@ -13,10 +13,14 @@ import { Reveal } from "@/components/ui/Reveal";
 export default function Problem() {
   return (
     <section className="section relative overflow-hidden bg-bone pb-20 pt-44 md:pb-40 md:pt-60">
-      {/* dark → paper transition from the hero */}
+      {/* dark → paper transition from the hero — long, eased for a smooth blend */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-obsidian to-bone"
+        className="pointer-events-none absolute inset-x-0 top-0 h-52 md:h-64"
         aria-hidden
+        style={{
+          background:
+            "linear-gradient(to bottom, #0C0C0B 0%, #100f0d 22%, #1d1b18 38%, #45423a 54%, #8f8a7f 70%, #cfcbc4 84%, #F8F7F3 100%)",
+        }}
       />
 
       <div className="container-hinoso relative px-6">
