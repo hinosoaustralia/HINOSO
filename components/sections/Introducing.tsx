@@ -58,11 +58,6 @@ export default function Introducing() {
           ))}
         </div>
 
-        <Reveal delay={0.1}>
-          <p className="mt-14 text-center text-[11px] uppercase tracking-[0.34em] text-sage-700">
-            The pod, fully revealed at launch
-          </p>
-        </Reveal>
       </div>
     </section>
   );

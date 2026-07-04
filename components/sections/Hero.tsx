@@ -126,15 +126,6 @@ export default function Hero() {
             Join the Waitlist
           </MagneticButton>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.6, duration: 1 }}
-          className="mt-7 text-[10px] uppercase tracking-[0.34em] text-bone/40"
-        >
-          Fully revealed at launch
-        </motion.p>
       </motion.div>
     </section>
   );
