@@ -12,16 +12,7 @@ import { Reveal } from "@/components/ui/Reveal";
  */
 export default function Problem() {
   return (
-    <section className="section relative overflow-hidden bg-bone pb-20 pt-64 md:pb-40 md:pt-80">
-      {/* dark → paper transition from the hero — long, finely eased for a very smooth blend */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-80 md:h-96"
-        aria-hidden
-        style={{
-          background:
-            "linear-gradient(to bottom, #0C0C0B 0%, #100f0e 16%, #1b1916 31%, #322f28 44%, #565149 55%, #8d887d 66%, #bdb9b0 77%, #e7e4dd 88%, #F8F7F3 100%)",
-        }}
-      />
+    <section className="section relative overflow-hidden bg-bone pb-20 pt-28 md:pb-40 md:pt-40">
 
       <div className="container-hinoso relative px-6">
         <div className="mx-auto max-w-3xl text-center">
