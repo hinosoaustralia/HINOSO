@@ -46,6 +46,19 @@ export default function Hero() {
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
 
+      {/* soft light that drifts across the product — dynamic lighting */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[55vmin] w-[55vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(222,220,210,0.12) 0%, transparent 66%)",
+          filter: "blur(28px)",
+        }}
+        animate={{ x: ["-28%", "26%", "-28%"], y: ["-16%", "12%", "-16%"] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       {/* vignette */}
       <div
         className="pointer-events-none absolute inset-0"

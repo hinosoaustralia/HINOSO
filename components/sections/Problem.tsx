@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { PROBLEM_POINTS } from "@/lib/content";
 import { SplitWords } from "@/components/ui/AnimatedText";
 import { Reveal } from "@/components/ui/Reveal";
@@ -39,19 +40,25 @@ export default function Problem() {
 
         <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           {PROBLEM_POINTS.map((point, i) => (
-            <Reveal key={point.word} delay={i * 0.1}>
-              <div className="flex h-full flex-col items-center rounded-3xl border border-charcoal/8 bg-white/40 p-6 text-center backdrop-blur">
-                <div className="flex h-24 items-center justify-center opacity-70">
-                  <Silhouette type={i} />
-                </div>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight text-charcoal">
-                  {point.word}
-                </h3>
-                <p className="mt-2 text-sm text-charcoal-muted text-pretty">
-                  {point.caption}
-                </p>
+            <motion.div
+              key={point.word}
+              initial={{ opacity: 0, y: 40, scale: 0.94 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.09 }}
+              whileHover={{ y: -8 }}
+              className="group flex h-full flex-col items-center rounded-3xl border border-charcoal/8 bg-white/40 p-6 text-center backdrop-blur transition-shadow duration-500 hover:shadow-soft"
+            >
+              <div className="flex h-24 items-center justify-center opacity-70 transition-transform duration-500 group-hover:scale-110">
+                <Silhouette type={i} />
               </div>
-            </Reveal>
+              <h3 className="mt-2 text-xl font-semibold tracking-tight text-charcoal">
+                {point.word}
+              </h3>
+              <p className="mt-2 text-sm text-charcoal-muted text-pretty">
+                {point.caption}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
