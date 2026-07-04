@@ -41,8 +41,10 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-obsidian px-6 py-24"
+      className="relative w-full overflow-hidden bg-obsidian"
     >
+      {/* First screen — copy stays centred; the black then runs on below (mobile). */}
+      <div className="relative flex min-h-[100svh] w-full items-center justify-center px-6 py-24">
       {/* Faint scrolling word-wall in the background, behind the product. */}
       <div
         aria-hidden
@@ -167,6 +169,10 @@ export default function Hero() {
           </MagneticButton>
         </motion.div>
       </motion.div>
+      </div>
+
+      {/* Extra black on mobile so the hero runs longer before the paper section. */}
+      <div className="h-[16vh] w-full md:hidden" aria-hidden />
     </section>
   );
 }
