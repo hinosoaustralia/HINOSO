@@ -14,7 +14,7 @@ export default function Introducing() {
   return (
     <section
       id="introducing"
-      className="section relative overflow-hidden bg-bone py-24 md:py-32"
+      className="section relative overflow-hidden bg-bone py-16 md:py-32"
     >
       <div className="container-hinoso px-6">
         <div className="mx-auto max-w-2xl text-center">

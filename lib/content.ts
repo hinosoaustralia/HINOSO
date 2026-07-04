@@ -5,8 +5,6 @@
 
 export const NAV_LINKS = [
   { label: "Product", href: "#introducing" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Ecosystem", href: "#ecosystem" },
   { label: "Waitlist", href: "#waitlist" },
 ] as const;
 
@@ -37,35 +35,7 @@ export const MODALITIES = [
   { name: "TENS", desc: "Gentle nerve stimulation that eases everyday aches." },
 ] as const;
 
-/** Section 4 — how it works, built around reusable gel pads (not sleeves). */
-export const HOW_STEPS = [
-  {
-    index: "01",
-    title: "Peel a gel pad",
-    body: "Peel a reusable, skin-safe gel pad and place it wherever you need relief. No straps, no mess.",
-    visual: "pad",
-  },
-  {
-    index: "02",
-    title: "Click on a pod",
-    body: "Snap a HINOSO pod onto the pad. It locks on magnetically and powers up instantly.",
-    visual: "snap",
-  },
-  {
-    index: "03",
-    title: "Choose your therapy",
-    body: "Open the app and dial in wireless heat, EMS or TENS — then set the intensity that feels right.",
-    visual: "heat",
-  },
-  {
-    index: "04",
-    title: "Simply recover",
-    body: "Move, work, travel or rest. HINOSO fades into the background and does its job.",
-    visual: "relax",
-  },
-] as const;
-
-/** Section 5 — lifestyle glimpses (no faces, product only ever half-seen). */
+/** Section 4 — lifestyle glimpses (no faces, product only ever half-seen). */
 export const MOVEMENT_SCENES = [
   { title: "Gym", note: "Between sets, on the go." },
   { title: "Office", note: "Recovery you can wear to work." },
@@ -73,26 +43,7 @@ export const MOVEMENT_SCENES = [
   { title: "Rest", note: "Wind down. Warm up. Repeat." },
 ] as const;
 
-/** Section 6 — the ecosystem grid. */
-export const ECOSYSTEM = [
-  {
-    title: "Pods",
-    body: "The core. Wireless heat, EMS & TENS in one wearable pod.",
-    span: "md:col-span-2",
-  },
-  {
-    title: "Gel pads",
-    body: "Reusable, skin-safe adhesive pads for every muscle group.",
-    span: "",
-  },
-  {
-    title: "Carry case",
-    body: "Keeps your four pods together, ready for anywhere.",
-    span: "md:col-span-3",
-  },
-] as const;
-
-/** Section 8 — comparison. */
+/** Comparison. */
 export const COMPARISON = {
   traditional: {
     label: "Traditional TENS",

@@ -1,9 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
 import Introducing from "@/components/sections/Introducing";
-import HowItWorks from "@/components/sections/HowItWorks";
 import Movement from "@/components/sections/Movement";
-import Ecosystem from "@/components/sections/Ecosystem";
 import Comparison from "@/components/sections/Comparison";
 import Waitlist from "@/components/sections/Waitlist";
 
@@ -40,9 +38,7 @@ export default function Home() {
       <Hero />
       <Problem />
       <Introducing />
-      <HowItWorks />
       <Movement />
-      <Ecosystem />
       <Comparison />
       <Waitlist />
     </>

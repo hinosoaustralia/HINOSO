@@ -12,7 +12,7 @@ import { Reveal } from "@/components/ui/Reveal";
  */
 export default function Movement() {
   return (
-    <section className="section relative overflow-hidden bg-bone py-24 md:py-32">
+    <section className="section relative overflow-hidden bg-bone py-16 md:py-32">
       <div className="container-hinoso px-6">
         <div className="max-w-2xl">
           <span className="eyebrow">Designed around movement</span>

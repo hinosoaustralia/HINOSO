@@ -48,7 +48,7 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="section relative overflow-hidden bg-bone py-28 md:py-40"
+      className="section relative overflow-hidden bg-bone py-20 md:py-40"
     >
       {/* Soft animated sage aura */}
       <motion.div

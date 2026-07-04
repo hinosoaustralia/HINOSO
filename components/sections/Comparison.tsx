@@ -12,7 +12,7 @@ import { staggerContainer, staggerItem } from "@/components/ui/Reveal";
  */
 export default function Comparison() {
   return (
-    <section className="section relative overflow-hidden bg-bone py-28 md:py-40">
+    <section className="section relative overflow-hidden bg-bone py-20 md:py-40">
       <div className="container-hinoso px-6">
         <div className="mb-16 text-center">
           <span className="eyebrow">The difference</span>
