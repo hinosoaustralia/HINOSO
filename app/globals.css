@@ -31,6 +31,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* Stop the elastic overscroll flashing a mismatched colour at the edges. */
+    overscroll-behavior: none;
+    background-color: var(--obsidian);
   }
 
   body {

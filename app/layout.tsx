@@ -4,6 +4,7 @@ import "./globals.css";
 
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import ThemeColorSync from "@/components/ui/ThemeColorSync";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -58,10 +59,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8F7F3" },
-    { media: "(prefers-color-scheme: dark)", color: "#0C0C0B" },
-  ],
+  // Start dark to match the hero on first paint; ThemeColorSync updates it on
+  // scroll so the mobile browser bars always match the section on screen.
+  themeColor: "#0C0C0B",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -75,6 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={bodoni.variable}>
       <body className="bg-bone text-charcoal antialiased selection:bg-sage/30">
+        {/* Keeps the mobile browser bars matching the section on screen. */}
+        <ThemeColorSync />
+
         {/* First-load cinematic curtain with the HINOSO wordmark. */}
         <LoadingScreen />
 
