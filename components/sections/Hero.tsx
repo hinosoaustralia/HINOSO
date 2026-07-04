@@ -8,9 +8,9 @@ import { SplitWords } from "@/components/ui/AnimatedText";
 
 /**
  * SECTION 1 — Hero.
- * The HINOSO Pod sits large behind the headline (darkened to match the dark
- * studio), and scales up as you scroll while the copy lifts and fades — the one
- * scroll set-piece of the site.
+ * The product is only ever glimpsed — a blurred, darkened shape behind the
+ * headline, wrapped in a slow-breathing sage aura so it stays a mystery. It
+ * scales up as you scroll while the copy lifts and fades.
  */
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,8 +23,8 @@ export default function Hero() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
   const textY = useTransform(scrollYProgress, [0, 0.55], [0, -60]);
 
-  // Product scales up + drifts to feel like it's coming toward you.
-  const podScale = useTransform(scrollYProgress, [0, 0.75], [1, 1.32]);
+  // Product scales up + drifts as you scroll — it looms closer but never clears.
+  const podScale = useTransform(scrollYProgress, [0, 0.75], [1, 1.34]);
   const podY = useTransform(scrollYProgress, [0, 1], [0, 70]);
 
   return (
@@ -33,21 +33,34 @@ export default function Hero() {
       ref={ref}
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-obsidian px-6 py-24"
     >
-      {/* soft studio glow + vignette */}
+      {/* slow-breathing sage aura */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[85vmin] w-[85vmin] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(141,154,136,0.20) 0%, rgba(141,154,136,0.05) 40%, transparent 68%)",
+          filter: "blur(20px)",
+        }}
+        animate={{ scale: [1, 1.12, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* vignette */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
         style={{
           background:
-            "radial-gradient(55% 45% at 50% 52%, rgba(141,154,136,0.10) 0%, transparent 62%), radial-gradient(120% 90% at 50% 45%, transparent 45%, rgba(3,3,3,0.72) 100%)",
+            "radial-gradient(120% 90% at 50% 45%, transparent 42%, rgba(3,3,3,0.78) 100%)",
         }}
       />
 
-      {/* The product — large, behind the text, dimmed to match the scene. */}
+      {/* The product — large, blurred, dimmed. A glimpse, never a reveal. */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[min(920px,110vw)] -translate-x-1/2 -translate-y-1/2">
         <motion.div style={{ scale: podScale, y: podY }}>
           <PodRender
-            imgFilter="brightness(0.66) contrast(1.16) saturate(0.92)"
+            imgFilter="brightness(0.6) contrast(1.08) saturate(0.88) blur(11px)"
             shadow={false}
           />
         </motion.div>
@@ -59,7 +72,7 @@ export default function Hero() {
         aria-hidden
         style={{
           background:
-            "radial-gradient(46% 42% at 50% 44%, rgba(4,4,4,0.6) 0%, rgba(4,4,4,0.2) 55%, transparent 75%)",
+            "radial-gradient(46% 42% at 50% 44%, rgba(4,4,4,0.55) 0%, rgba(4,4,4,0.18) 55%, transparent 75%)",
         }}
       />
 
@@ -113,6 +126,15 @@ export default function Hero() {
             Join the Waitlist
           </MagneticButton>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.6, duration: 1 }}
+          className="mt-7 text-[10px] uppercase tracking-[0.34em] text-bone/40"
+        >
+          Fully revealed at launch
+        </motion.p>
       </motion.div>
     </section>
   );
