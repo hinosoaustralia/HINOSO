@@ -26,35 +26,46 @@ export const metadata: Metadata = {
     template: "%s — HINOSO",
   },
   description:
-    "HINOSO is a wearable recovery system designed for everyday movement. Wireless heat, EMS and TENS in one modular ecosystem. Join the waitlist.",
+    "HINOSO is a wearable recovery system designed for everyday movement — wireless heat, EMS and TENS in one pod, with reusable gel pads and no wires. Join the waitlist.",
   keywords: [
     "HINOSO",
     "wearable recovery",
-    "EMS",
-    "TENS",
+    "recovery pod",
+    "EMS device",
+    "TENS unit",
     "wireless heat therapy",
     "muscle recovery",
     "recovery wearable",
-    "modular recovery system",
+    "reusable gel pads",
+    "portable recovery device",
   ],
   authors: [{ name: "HINOSO" }],
   creator: "HINOSO",
+  publisher: "HINOSO",
   applicationName: "HINOSO",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
     title: "HINOSO — Recovery. Made Simple.",
     description:
-      "A wearable recovery system designed for everyday movement. Wireless heat, EMS and TENS in one modular ecosystem.",
+      "Wireless heat, EMS and TENS in one pod. No wires, no fuss. Reserve your place on the HINOSO waitlist.",
     siteName: "HINOSO",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "HINOSO — Recovery. Made Simple.",
     description:
-      "A wearable recovery system designed for everyday movement. Join the waitlist.",
+      "Wireless heat, EMS and TENS in one pod. No wires. Join the waitlist.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
   category: "technology",
 };
 

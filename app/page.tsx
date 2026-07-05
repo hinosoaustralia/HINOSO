@@ -10,7 +10,7 @@ const jsonLd = {
   "@type": "Product",
   name: "HINOSO",
   description:
-    "A wearable recovery system designed for everyday movement. Wireless heat, EMS and TENS in one modular ecosystem.",
+    "A wearable recovery system designed for everyday movement. Wireless heat, EMS and TENS in one pod, with reusable gel pads and no wires.",
   brand: { "@type": "Brand", name: "HINOSO" },
   category: "Wearable recovery device",
   slogan: "Recovery. Made Simple.",

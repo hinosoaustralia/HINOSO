@@ -46,4 +46,4 @@ export const MOVEMENT_SCENES = [
 /* ------------------------------------------------------------------ *
  *  👇  PASTE YOUR INSTAGRAM LINK HERE
  * ------------------------------------------------------------------ */
-export const INSTAGRAM_URL = "https://instagram.com/hinoso";
+export const INSTAGRAM_URL = "https://www.instagram.com/hinoso.recovery/";
